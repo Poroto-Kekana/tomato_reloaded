@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Form</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- css main -->
+    
+    <!-- axios and alpine -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="./javascript/form.js"></script>
+
+</head>
+<body>
+    <div class="container bg-warning mb-5 mt-5 p-5" x-data="loginForm">
+
+        <h2 class="login text-center display-1 text-success">Login Details</h2>
+
+        <form onsubmit="return false" autocomplete="on">
+
+            <div class="mb-2 mt-2">
+
+                <label for="username/email">Username or Email</label>
+
+                <input type="username/email" autocomplete="on" class="form-control form-control" id="username" x-model="userName" placeholder="Enter username or email"
+                name="username">
+
+            </div>
+
+            <div class="mb-2">
+
+                <label for="password">Password</label>
+
+                <input type="password" autocomplete="on" class="form-control form-control" id="pwd" x-model="passWord" placeholder="Enter password"
+                name="password">
+
+                <div id="passwordHelp" class="form-text text-danger p-1">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                </div>
+
+            </div>
+
+            <div class="form-check mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                </label>
+            </div>
+
+            <button type="button" class="btn btn-info" x-on:click="login">Submit</button>
+            
+        </form>
+
+    </div>
+</body>
+
+</html>
