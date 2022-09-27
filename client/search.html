@@ -97,6 +97,11 @@
 
         </div>
 
+        <div>
+            <p x-text="message"></p>
+        </div>
+        
+
         <div x-show="hideList">
             <strong>List of available tomato diseases</strong>
             <h3>Bacterial spot disease</h3>
@@ -107,24 +112,23 @@
 
         </div>
 
+        <div class="searchResults" >
 
-
-
-        <div class="searchResults">
-
-            <p x-text="message"></p>
+            
             <div x-show="isFound">
+
                 <strong>
                     <a href="./disease-info.html">
                         <h3 x-text="results.disease_name"></h3>
                     </a>
                 </strong>
                 <strong>Description</strong>
-                <li x-text="results.description"></li>
+                <li x-text="results.description" style="text-align:justify;"></li>
                 <strong>Symptoms And Signs</strong>
-                <li x-text="results.symptoms_and_signs"></li>
+                <li x-text="results.symptoms_and_signs" style="text-align:justify;"></li>
                 <strong>Treatment</strong>
-                <li x-text="results.treatment"></li>
+                <li x-text="results.treatment" style="text-align:justify;"></li>
+
             </div>
 
             <!-- 

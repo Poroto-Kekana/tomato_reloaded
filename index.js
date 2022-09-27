@@ -1,7 +1,10 @@
 import express from 'express';
 import * as sqlite from 'sqlite';
 import sqlite3 from 'sqlite3';
-import cors from 'cors'
+import cors from 'cors';
+// import searchAPI from './api/searchAPI';
+// import inputAPI from './api/inputAPI';
+// import loginAPI from './api/loginAPI';
 
 const app = express();
 
