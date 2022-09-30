@@ -51,12 +51,38 @@
             </div>
          </div>
     </nav>
-
+<!-- 
     <div class="container bg-success m-3 p-5">
         <div class="input_img mb-3">
             <label for="formFile" class="form-label text-white display-6">Upload Image:</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" type="file" id="image_input">
         </div>
     </div>
+
+    <picture id="display_image"></picture>
+
+    <script src="./apps/inputApi.js"></script> -->
+
+    <section>
+        <div class="bg-success m-1 p-5 justify-content-md-center">
+            <img id="frame" src="" class="rounded mx-auto d-block" width="50%" />
+            <div class="input_img mb-5">
+                <label for="Image" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="formFile" onchange="preview()">
+                <button onclick="clearImage()" class="btn btn-primary mt-3">Upload</button>
+            </div>
+            
+        </div>
+
+        <script>
+            function preview() {
+                frame.src = URL.createObjectURL(event.target.files[0]);
+            }
+            function clearImage() {
+                document.getElementById('formFile').value = null;
+                frame.src = "";
+            }
+        </script>
+    </section>
 </body>
 </html>
