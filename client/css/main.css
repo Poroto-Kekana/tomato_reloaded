@@ -14,6 +14,26 @@
     padding: 100px 0;
 }
 
+.lead {
+    background-color: rgb(240, 184, 41);
+    font-style: italic;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 1em;
+}
+
+
+.mission{
+    font-style: italic;
+    text-align: center;
+    margin: 1px;  
+     
+}
+
+.vision{
+    text-align: center;
+    font-style: italic;
+}
 section#latest .latest-item button {
     max-height: 250px;
     padding: 0;
