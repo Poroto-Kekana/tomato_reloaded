@@ -122,5 +122,6 @@ app.post('/api/diseases/', async (request, response) => {
 //         })
 // })
 
-const port = process.env.PORT || 5007;
+
+const port = process.env.PORT || 6089;
 app.listen(port, () => console.log(`listen on port ${port}...`))
