@@ -10,7 +10,7 @@ document.addEventListener('alpine:init', () => {
         isFound: false,
 
         search() {
-            axios.post(`http://localhost:5007/api/diseases/`, {
+            axios.post(`http://localhost:6089/api/diseases/`, {
                 disease_name: this.searchInput
             }).then(response => {
                 this.isFound = response.data.isFound
