@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* p {
+        font-size: 1rem;
+        font-family: sans-serif;
+        margin: 20px;
+    }  */
+
+     input[type=text], select {
+        width: 50%;
+        padding: 12px 28px;
+        margin: 8px 8;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+    } 
+
+    .customer {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding:20px;
+        width:25%;
+        margin:auto;
+
+    }
+
+    .manager {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding:20px;
+        width:25%;
+        margin:auto;
+
+    }
+
+    .Projects {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding:20px;
+        width:25%;
+        margin:auto;
+
+    }
+
+    body {border: 2px solid;
+        padding: 4em;
+        margin: 4em;
+        border-radius: 1em;
+        
+        
+    }
+
+.database{
+    display: flex;
+}
+/* .heading{
+    background-color: darkgrey;
+} */
+    h1{
+        text-align: center;
+    }
+</style>
+
+<body>
+
+   <!-- <div class="heading"> <h1>Database</h1></div> -->
+    <div class="database">
+        
+    <div class="customer">
+        <form action="{{ url_for('customer') }}" method="POST">
+
+            <h1>New customer details</h1>
+           <p> First name <br>
+        <input type="text" name="fn" /><br/>
+
+        Last name <br>
+        <input type="text" name="n" /><br/>
+
+        Email<br>
+        <input type="text" name="n" /><br/>
+
+        User name<br>
+        <input type="text" name="n" /><br/>
+
+        Password <br>
+        <input type="text" name="n" /><br/>
+
+        contacts<br>
+        <input type="text" name="n" /><br/>
+
+        Manager<br>
+        <input type="text" name="n" /><br/>
+
+        Project<br>
+        <input type="text" name="n" /><br/>
+       
+        <input type="submit" value="submit" /><br/>
+        
+        </p>
+            
+        </form>
+    </div>
+
+
+    <div class="manager">
+        <form action="{{ url_for('customer') }}" method="POST">
+
+            <h1>Manager details</h1>
+           <p> First name <br>
+        <input type="text" name="fn" /><br/>
+
+        Last name <br>
+        <input type="text" name="n" /><br/>
+
+        Email<br>
+        <input type="text" name="n" /><br/>
+
+        User name<br>
+        <input type="text" name="n" /><br/>
+
+        Password <br>
+        <input type="text" name="n" /><br/>
+
+        contacts<br>
+        <input type="text" name="n" /><br/>
+
+       
+        <input type="submit" value="submit" /><br/>
+        
+        </p>
+            
+        </form>
+    </div>
+
+
+    <div class="Projects">
+        <form action="{{ url_for('customer') }}" method="POST">
+
+            <h1>Project details</h1>
+           <p> project name <br>
+        <input type="text" name="fn" /><br/>
+
+        project location<br>
+        <input type="text" name="n" /><br/>
+
+       
+        <input type="submit" value="submit" /><br/>
+        
+        </p>
+            
+        </form>
+    </div>
+</div>
+</body>
+</html>
