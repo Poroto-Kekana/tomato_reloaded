@@ -10,6 +10,227 @@ content-type: application/json
      Rotate tomatoes with vegetables unrelated botanically to tomatoes or potatoes. Do not plant these sites with these groups of vegetables for two to three years. Avoid harvesting tomato fruits with visible disease lesions.",
     "id": 4
 }
+###
+ 
+GET http://localhost:5007/api/health_status
+content-type: application/json
+ 
+
+
+###
+
+POST http://localhost:5007/api/health_status/update
+content-type: application/json
+
+{
+"diagnosis": "Early blight",
+"picture_name": "img1.png",
+"id": 1
+}
+
+###
+
+
+
+POST http://localhost:5007/api/health_status/create
+content-type: application/json
+
+{
+"diagnosis": "Healthy",
+"picture_name": "img6.png",
+"id": 6
+}
+
+
+
+###
+
+POST http://localhost:5007/api/health_status/delete
+content-type: application/json
+
+{
+"id": 6
+
+}
+
+###
+
+GET http://localhost:5007/api/customer
+content-type: application/json
+
+###
+
+POST http://localhost:5007/api/customer/update
+content-type: application/json
+
+{
+"first_name": "ange1",
+"last_name": "Mulaudzi",
+"email": "angel@gmail.com",
+"manager": 1,
+"id": 3
+}
+
+###
+POST http://localhost:5007/api/customer/create
+content-type: application/json
+
+{
+"first_name": "blight",
+"last_name": "early",
+"email": "blight@gmail",
+"username": "201701@mail",
+"password": "magala.01",
+"contacts": "06754346",
+"manager": 4,
+"id": 2
+}
+
+###
+
+POST http://localhost:5007/api/customer/delete
+content-type: application/json
+
+{
+"id": 7
+
+}
+
+###
+
+GET http://localhost:5007/api/manager
+content-type: application/json
+
+###
+
+POST http://localhost:5007/api/manager/update
+content-type: application/json
+
+{
+
+"first_name": "Angel",
+"last_name": "Magavha",
+"email": "angel@gmail.com",
+"username": "angel@gmail.com",
+"password": "angel@gmail.com",
+"contacts":566777,
+"id": 1
+
+}
+
+
+###
+
+POST http://localhost:5007/api/manager/create
+content-type: application/json
+
+{
+"first_name": "blight",
+"last_name": "early",
+"email": "blight@gmail",
+"username": "201701@mail",
+"password": "magala.01",
+"contacts": "06754346",
+"id": 2
+
+}
+
+###
+
+POST http://localhost:5007/api/manager/delete
+content-type: application/json
+
+{
+"id": 7
+
+}
+
+###
+
+GET http://localhost:5007/api/projects
+content-type: application/json
+
+
+###
+
+POST http://localhost:5007/api/projects/update
+content-type: application/json
+
+{
+"project_name": "bunting1",
+"location": "gauteng",
+"id": 1
+}
+
+###
+
+POST http://localhost:5007/api/projects/create
+content-type: application/json
+
+{
+"project_name": "Mashamba",
+"location": "img3.png"
+
+}
+
+###
+
+POST http://localhost:5007/api/projects/delete
+content-type: application/json
+
+{
+"id": 3
+
+}
+
+###
+
+GET http://localhost:5007/api/detect
+content-type: application/json
+
+
+###
+
+POST http://localhost:5007/api/detect/update
+content-type: application/json
+
+{
+"detect_date": "04/May",
+"id": 1
+}
+
+###
+
+POST http://localhost:5007/api/detect/create
+content-type: application/json
+
+{
+"detect_time": "12H00",
+"detect_date": "07/March",
+"project_id": 1, 
+"customer_id": 1, 
+"health_status_id": 1
+
+}
+
+###
+
+POST http://localhost:5007/api/detect/delete
+content-type: application/json
+
+{
+    
+"id": 2
+
+}
+
+
+
+
+
+
+
+
 
 ####
 
