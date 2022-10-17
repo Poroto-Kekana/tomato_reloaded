@@ -1,0 +1,11 @@
+.dark-bg {
+    background-image: linear-gradient(rgb(0,0,0, .9), rgb(0,0,0, .9)), url('img/img1\ \(2\).jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+#hero .container {
+    height: 50vh;
+}

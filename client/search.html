@@ -152,6 +152,19 @@
 
 
         </div>
+
+        <main>
+            <h1>Home page</h1>
+            <div x-data="image">
+              <img x-show="imageUrl"  :src="imageUrl" style="width: 100px; height: 100px" />
+              <input class="mt-2" type="file" accept="image/*" x-on:change="fileChosen" value="Choose image to upload" />
+              <div x-show="imageUrl" >
+                  <input type="button" value="Upload photo" x-on:click="uploadPhoto" >
+              </div>
+              <div x-text="status">
+              </div>
+            </div>
+          </main>
     </div>
 </body>
 
