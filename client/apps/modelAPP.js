@@ -3,8 +3,8 @@ document.addEventListener('alpine:init', () => {
       fname: 'the image',
       imageUrl: '',
       imageData : null,
-      status : "...",
-      message : "...",
+      status : "",
+      message : "",
       fileChosen(evt) {  
         this.fileToDataUrl(evt, (src) => (this.imageUrl = src));
       },

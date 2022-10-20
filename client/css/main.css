@@ -59,6 +59,11 @@ section#latest .latest-item:hover i {
     transform: none;
 }
 
+/* .carousel {
+    width:150px;
+    height:150px;
+} */
+
 section#latest .latest-item .overlay {
     position: absolute;
     top: 0;

@@ -29,6 +29,7 @@ console.log('db initialized')
 });
  console.log('db initialized')
 
+ 
 
 app.get('/', async (request, response) => {
     response.json({

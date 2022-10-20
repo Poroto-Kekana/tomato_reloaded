@@ -5,7 +5,7 @@ FOREIGN KEY (manager_id) REFERENCES manager (id),FOREIGN KEY (project_id) REFERE
 
 
 create table detect(
-id integer PRIMARY KEY AUTOINCREMENT, detect_time real, detect_date real, customer_id integer, project_id integer,health_status_id integer,
+id integer PRIMARY KEY AUTOINCREMENT, detect_date_time TIMESTAMP NULL, detect_time real, detect_date real, customer_id integer, project_id integer,health_status_id integer,
 FOREIGN KEY (customer_id) REFERENCES customer (id),FOREIGN KEY (project_id) REFERENCES projects (id), FOREIGN KEY (health_status_id) REFERENCES health_status (id)
 );
 
