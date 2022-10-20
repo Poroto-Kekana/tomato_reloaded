@@ -10,7 +10,7 @@ document.addEventListener('alpine:init', () => {
         projects() {
             // console.log(this.project_name)
 
-            let url = "http://localhost:5007/api/projects/create";
+            let url = "http://localhost:4001/api/projects/create";
 
             let params = {
 

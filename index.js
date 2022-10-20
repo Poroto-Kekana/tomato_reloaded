@@ -330,8 +330,9 @@ app.post(`/api/detect/update`, async (request, response) => {
 
 app.post(`/api/detect/create`, async function (req, res) {
     const {detect_time, detect_date, project_id, customer_id, health_status_id} = req.body
+    const currentDate = new Date().toISOString()
 
-    const result = await db2.run(`insert into detect (detect_time, detect_date, project_id, customer_id, health_status_id) values(?,?,?,?,?)`, detect_time, detect_date, project_id, customer_id, health_status_id);
+    const result = await db2.run(`insert into detect (detect_time, detect_date_time, project_id, customer_id, health_status_id) values(?,?,?,?,?)`, detect_time, currentDate, project_id, customer_id, health_status_id);
     console.log(result)
 
     res.json({
@@ -369,6 +370,7 @@ app.post(`/api/forms/login`, async (request, response) => {
 
    
  } )
+
 
 
  
@@ -420,5 +422,6 @@ app.post(`/api/forms/register/delete`, async function (req, res) {
 
 
 
-const port = process.env.PORT || 5007;
+const port = process.env.PORT || 4001;
+
 app.listen(port, () => console.log(`listen on port ${port}...`))

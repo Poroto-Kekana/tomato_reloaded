@@ -8,7 +8,7 @@ document.addEventListener('alpine:init', () => {
         login() {
             console.log(this.username)
 
-            let url = "http://localhost:5007/api/forms/login";
+            let url = "http://localhost:4001/api/forms/login";
 
             let params = {
                 username : this.username,

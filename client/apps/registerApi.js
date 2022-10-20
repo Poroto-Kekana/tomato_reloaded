@@ -8,7 +8,7 @@ document.addEventListener('alpine:init', () => {
         register() {
             console.log(this.username)
 
-            let url = "http://localhost:5007/api/forms/register/create";
+            let url = "http://localhost:4001/api/forms/register/create";
 
             let params = {
                 username : this.username,

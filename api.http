@@ -1,4 +1,4 @@
-POST http://localhost:5000/api/diseases/update
+POST http://localhost:4001/api/diseases/update
 content-type: application/json
 
 {
@@ -11,12 +11,12 @@ content-type: application/json
     "id": 4
 }
 ###
-GET http://localhost:5007/api/forms/register
+GET http://localhost:4001/api/forms/register
  content-type: application/json
  
 
 ###
-POST http://localhost:5007/api/forms/register/create
+POST http://localhost:4001/api/forms/register/create
 content-type: application/json
 
 {
@@ -28,7 +28,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/forms/register/delete
+POST http://localhost:4001/api/forms/register/delete
 content-type: application/json
 
 {
@@ -40,14 +40,14 @@ content-type: application/json
 
  ###
 ###
-GET http://localhost:5007/api/health_status
+GET http://localhost:4001/api/health_status
 content-type: application/json
  
 
 
 ###
 
-POST http://localhost:5007/api/health_status/update
+POST http://localhost:4001/api/health_status/update
 content-type: application/json
 
 {
@@ -60,7 +60,7 @@ content-type: application/json
 
 
 
-POST http://localhost:5007/api/health_status/create
+POST http://localhost:4001/api/health_status/create
 content-type: application/json
 
 {
@@ -73,7 +73,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/health_status/delete
+POST http://localhost:4001/api/health_status/delete
 content-type: application/json
 
 {
@@ -83,12 +83,12 @@ content-type: application/json
 
 ###
 
-GET http://localhost:5007/api/customer
+GET http://localhost:4001/api/customer
 content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/customer/update
+POST http://localhost:4001/api/customer/update
 content-type: application/json
 
 {
@@ -100,7 +100,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost:5007/api/customer/create
+POST http://localhost:4001/api/customer/create
 content-type: application/json
 
 {
@@ -116,7 +116,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/customer/delete
+POST http://localhost:4001/api/customer/delete
 content-type: application/json
 
 {
@@ -126,12 +126,12 @@ content-type: application/json
 
 ###
 
-GET http://localhost:5007/api/manager
+GET http://localhost:4001/api/manager
 content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/manager/update
+POST http://localhost:4001/api/manager/update
 content-type: application/json
 
 {
@@ -149,7 +149,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/manager/create
+POST http://localhost:4001/api/manager/create
 content-type: application/json
 
 {
@@ -165,7 +165,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/manager/delete
+POST http://localhost:4001/api/manager/delete
 content-type: application/json
 
 {
@@ -175,13 +175,13 @@ content-type: application/json
 
 ###
 
-GET http://localhost:5007/api/projects
+GET http://localhost:4001/api/projects
 content-type: application/json
 
 
 ###
 
-POST http://localhost:5007/api/projects/update
+POST http://localhost:4001/api/projects/update
 content-type: application/json
 
 {
@@ -193,7 +193,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/projects/create
+POST http://localhost:4001/api/projects/create
 content-type: application/json
 
 {
@@ -205,7 +205,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/projects/delete
+POST http://localhost:4001/api/projects/delete
 content-type: application/json
 
 {
@@ -215,13 +215,13 @@ content-type: application/json
 
 ###
 
-GET http://localhost:5007/api/detect
+GET http://localhost:4001/api/detect
 content-type: application/json
 
 
 ###
 
-POST http://localhost:5007/api/detect/update
+POST http://localhost:4001/api/detect/update
 content-type: application/json
 
 {
@@ -231,7 +231,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/detect/create
+POST http://localhost:4001/api/detect/create
 content-type: application/json
 
 {
@@ -245,7 +245,7 @@ content-type: application/json
 
 ###
 
-POST http://localhost:5007/api/detect/delete
+POST http://localhost:4001/api/detect/delete
 content-type: application/json
 
 {
