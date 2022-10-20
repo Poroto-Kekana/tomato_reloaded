@@ -26,7 +26,7 @@ document.addEventListener('alpine:init', () => {
       },
       uploadPhoto(){
         axios
-          .post('https://tomato-detect-tom.herokuapp.com/api/detect', this.imageData, {
+          .post('https://glacial-refuge-98609.herokuapp.com/api/detect', this.imageData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -84,7 +84,7 @@ document.addEventListener('alpine:init', () => {
           "health_status_id": id
         }
         axios
-          .post('http://localhost:5007/api/detect/create', param)
+          .post('http://localhost:4001/api/detect/create', param)
           .then(() =>{
             
           })
