@@ -11,10 +11,10 @@ FOREIGN KEY (customer_id) REFERENCES customer (id),FOREIGN KEY (project_id) REFE
 
 create table projects(
 id integer primary key AUTOINCREMENT,
-project_name text,
-location text
-
+project_name text,location text,manager_id integer,
+FOREIGN KEY (manager_id) REFERENCES manager (id)
 );
+
 
 create table manager (
 id integer primary key AUTOINCREMENT,
@@ -31,5 +31,13 @@ create table health_status(
 id integer primary key AUTOINCREMENT,
 diagnosis text,
 picture_name text
+
+);
+
+
+create table register(
+id integer primary key AUTOINCREMENT,username text,
+email real,
+password real
 
 );

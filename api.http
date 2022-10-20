@@ -11,7 +11,35 @@ content-type: application/json
     "id": 4
 }
 ###
+GET http://localhost:5007/api/forms/register
+ content-type: application/json
  
+
+###
+POST http://localhost:5007/api/forms/register/create
+content-type: application/json
+
+{
+"username": "Healthy",
+"email": "img6.png",
+"password": "mary2"
+
+}
+
+###
+
+POST http://localhost:5007/api/forms/register/delete
+content-type: application/json
+
+{
+"id": 7
+
+}
+
+
+
+ ###
+###
 GET http://localhost:5007/api/health_status
 content-type: application/json
  
@@ -64,7 +92,7 @@ POST http://localhost:5007/api/customer/update
 content-type: application/json
 
 {
-"first_name": "ange1",
+"first_name": "ange2",
 "last_name": "Mulaudzi",
 "email": "angel@gmail.com",
 "manager": 1,
@@ -76,7 +104,7 @@ POST http://localhost:5007/api/customer/create
 content-type: application/json
 
 {
-"first_name": "blight",
+"first_name": "blight1",
 "last_name": "early",
 "email": "blight@gmail",
 "username": "201701@mail",
@@ -157,8 +185,9 @@ POST http://localhost:5007/api/projects/update
 content-type: application/json
 
 {
-"project_name": "bunting1",
+"project_name": "bunting2",
 "location": "gauteng",
+"manager_id": 1,
 "id": 1
 }
 
@@ -169,7 +198,8 @@ content-type: application/json
 
 {
 "project_name": "Mashamba",
-"location": "img3.png"
+"location": "img3.png",
+"manager_id": "3"
 
 }
 
@@ -179,7 +209,7 @@ POST http://localhost:5007/api/projects/delete
 content-type: application/json
 
 {
-"id": 3
+"id": 23
 
 }
 

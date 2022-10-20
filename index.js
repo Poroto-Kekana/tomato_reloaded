@@ -247,15 +247,26 @@ app.get('/api/projects', async function (req, res) {
 })
 
 
-app.post(`/api/projects/update`, async (request, response) => {
+app.post(`/api/projects`, async (request, response) => {
+    console.log(request.body)
+    response.json({
+        status: 'success'
+    })
+ 
+ } )
+
+
+
+ app.post(`/api/projects/update`, async (request, response) => {
 
     // console.log(request,body)
 
-    const { project_name, location, id } = request.body;
+    const { project_name, location, manager_id, id } = request.body;
 
-    const results = await db2.run(`update projects set  project_name = ?, location = ?  where id = ?`,
+    const results = await db2.run(`update projects set  project_name = ?, location = ? , manager_id = ? where id = ?`,
         project_name,
         location,
+        manager_id,
         id
 
     )
@@ -266,19 +277,17 @@ app.post(`/api/projects/update`, async (request, response) => {
 
 })
 
-
 app.post(`/api/projects/create`, async function (req, res) {
-    const {project_name, location} = req.body
+    const {project_name, location, manager_id} = req.body
 
-    const result = await db2.run(`insert into projects (project_name, location) values(?,?)`,project_name, location);
-    console.log(result)
+    const result = await db2.run(`insert into projects (project_name, location, manager_id) values(?,?,?)`,project_name, location, manager_id);
+    // console.log(result)
 
     res.json({
         status: 'success'
     })
 
 })
-
 
 app.post(`/api/projects/delete`, async function (req, res) {
     const { id } = req.body
@@ -344,7 +353,72 @@ app.post(`/api/detect/delete`, async function (req, res) {
 })
 
 
+app.post(`/api/forms/login`, async (request, response) => {
+
+   // console.log("hello")
+//    const {username, email, password} = request.body
+//  const user = await db2.all(`select * from register where email = email`, email)
+
+//  if (user ){
+// console.log("welcome")
+
+//  } else{
+
+//     console.log("not registered")
+//  }
+
+   
+ } )
 
 
-const port = process.env.PORT || 4000;
+ 
+ 
+
+
+
+  app.get('/api/forms/register', async function (req, res) {
+    const register = await db2.all(`select * from register`)
+     res.json({
+        register
+
+   })
+ })
+
+ app.post(`/api/forms/register`, async (request, response) => {
+    console.log(request.body)
+    response.json({
+        status: 'success'
+    })
+ 
+ } )
+
+ app.post(`/api/forms/register/create`, async function (req, res) {
+    const {username, email, password} = req.body
+
+    const result = await db2.run(`insert into register (username, email, password) values(?,?,?)`,username, email, password);
+    console.log(result)
+
+    res.json({
+        status: 'success'
+    })
+
+})
+
+
+app.post(`/api/forms/register/delete`, async function (req, res) {
+    const { id } = req.body
+
+    const result = await db2.run(`delete from register where id = ?`, id);
+    //console.log(result)
+
+    res.json({
+        status: 'success'
+    })
+
+})
+
+
+
+
+const port = process.env.PORT || 5007;
 app.listen(port, () => console.log(`listen on port ${port}...`))
