@@ -26,7 +26,7 @@ document.addEventListener('alpine:init', () => {
       },
       uploadPhoto(){
         axios
-          .post('https://glacial-refuge-98609.herokuapp.com/api/detect', this.imageData, {
+          .post('https://glacial-caverns-34086.herokuapp.com/api/detect', this.imageData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
