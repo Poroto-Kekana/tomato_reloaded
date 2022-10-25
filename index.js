@@ -356,16 +356,16 @@ app.post(`/api/detect/delete`, async function (req, res) {
 
 app.post(`/api/forms/login`, async (request, response) => {
 
-   // console.log("hello")
-//    const {username, email, password} = request.body
+    console.log("hello")
+//   const {username, email, password} = request.body
 //  const user = await db2.all(`select * from register where email = email`, email)
 
 //  if (user ){
-// console.log("welcome")
+//  console.log("welcome")
 
-//  } else{
+//   } else{
 
-//     console.log("not registered")
+//    console.log("not registered")
 //  }
 
    
