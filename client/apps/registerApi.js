@@ -1,14 +1,14 @@
 document.addEventListener('alpine:init', () => {
-    Alpine.data('loginForm', () => ({
+    Alpine.data('registerForm', () => ({
 
         username: "",
         email: "",
         password: "",
 
-        login() {
+        register() {
             console.log(this.username)
 
-            let url = "http://localhost:4001/api/forms/login";
+            let url = "http://localhost:4001/api/forms/register/create";
 
             let params = {
                 username : this.username,
@@ -20,6 +20,8 @@ document.addEventListener('alpine:init', () => {
                 .post(url, params)
                 .then( (res) => {
                     console.log(res)
+                
+                    window.location.href ='./login.html'
                 })
         }
 
