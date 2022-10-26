@@ -2,9 +2,26 @@ import express from 'express';
 import * as sqlite from 'sqlite';
 import sqlite3 from 'sqlite3';
 import cors from 'cors';
+import jsonwebtoken from 'jsonwebtoken'
+import bcrypt from 'bcrypt'
+import * as dotenv from 'dotenv'
+
+
+dotenv.config()
 // import searchAPI from './api/searchAPI';
 // import inputAPI from './api/inputAPI';
 // import loginAPI from './api/loginAPI';
+const config = process.env
+const verrifyToken = (req, res, next) => {
+    const token = req.body.token || req.query.token || req.headers['x-access-token']
+    if(!token) {
+        return res.status(403).send('token required')
+    }
+    console.log(token)
+    const decoded = jsonwebtoken.verify(token, config.TOKEN_KEY)
+    req.user = decoded
+    return next()
+}
 
 const app = express();
 
@@ -39,7 +56,7 @@ app.get('/', async (request, response) => {
     console.log('status')
 });
 
-app.post('/api/diseases/', async (request, response) => {
+app.post('/api/diseases/', verrifyToken, async (request, response) => {
     const { disease_name } = request.body;
     await db.all(`SELECT * FROM diseases WHERE lower(disease_name) = ? `, disease_name.toLowerCase())
         .then(queryResults => {
@@ -51,7 +68,7 @@ app.post('/api/diseases/', async (request, response) => {
                 })
             } else {
                 response.json({
-                    status: "Disease Not Found",
+                    status: "Disease Not Found, Please refer to the list below!!",
                     isFound: false,
                 })
             }
@@ -355,22 +372,43 @@ app.post(`/api/detect/delete`, async function (req, res) {
 })
 
 
-app.post(`/api/forms/login`, async (request, response) => {
+ app.post('/api/forms/login', async (request, response) => {
 
-    console.log("hello")
-//   const {username, email, password} = request.body
-//  const user = await db2.all(`select * from register where email = email`, email)
-
-//  if (user ){
-//  console.log("welcome")
-
-//   } else{
-
-//    console.log("not registered")
-//  }
-
-   
- } )
+    
+  const {username, email, password} = request.body
+  const sql = `SELECT * FROM customer WHERE email = ?`
+  await db2.all(sql, email)
+  .then(queryResults => {
+    if (queryResults.length == 1) {
+        if(password === queryResults[0].password) {
+            
+            const token = jsonwebtoken.sign(
+                {user_id : queryResults[0].id, email : queryResults[0].email}, 
+                process.env.TOKEN_KEY,
+                {expiresIn : "1h"}
+            )
+            queryResults[0].token = token
+            response.json({
+                status: 'success',
+                isFound: true,
+                user: queryResults[0]
+            })
+        }   
+    } else {
+        response.json({
+            status: "Incorrect Username OR Password",
+            isFound: false,
+        })
+    }
+//   .then(result => {
+//     if (result.length !== 0) {
+//         const passwordEncrypted = bycrypt.hash(password, 10)
+//     }
+//     res.json({
+//         data : result
+//     })
+  })
+ })
 
 
 
@@ -379,8 +417,8 @@ app.post(`/api/forms/login`, async (request, response) => {
 
 
 
-  app.get('/api/forms/register', async function (req, res) {
-    const register = await db2.all(`select * from register`)
+ app.get('/api/forms/register', async function (req, res) {
+    const register = await db2.all(`select * from customer`)
      res.json({
         register
 
@@ -395,17 +433,29 @@ app.post(`/api/forms/login`, async (request, response) => {
  
  } )
 
- app.post(`/api/forms/register/create`, async function (req, res) {
+ app.post('/api/forms/register/create', async function (req, res) {
     const {username, email, password} = req.body
 
-    const result = await db2.run(`insert into register (username, email, password) values(?,?,?)`,username, email, password);
-    console.log(result)
+    // const result = await db2.run(`insert into register (username, email, password) values(?,?,?)`,username, email, password);
+    // console.log(result)
+
+    const sql = "SELECT * FROM customer WHERE email = ?"
+    await db2.all(sql, email)
+        .then(result => {
+            if (result.length === 0) {
+                 
+                const result = db2.run(`insert into customer (username, email, password) values(?,?,?)`,username, email, password);
+                // console.log(result)  
+            }
+        })
+
+     
 
     res.json({
         status: 'success'
     })
 
-})
+ })
 
 
 app.post(`/api/forms/register/delete`, async function (req, res) {

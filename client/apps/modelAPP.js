@@ -39,56 +39,56 @@ document.addEventListener('alpine:init', () => {
 
             this.status = result.data.pred_class
             this.message = result.data.confidence
-            // let diagnosis
-            // let id
-            // switch (this.status) {
+            let diagnosis
+            let id
+            switch (this.status) {
               
-            //   case "Tomato_Bacterial_spot":
-            //     diagnosis = "Bacterial Spot"
-            //     id = 3
-            //     break;
-            //   case "Tomato_healthy":
-            //     diagnosis ="Healthy"
-            //     id = 6
-            //     break;
-            //   case "Tomato_Late_blight":
-            //     diagnosis = "Late blight"
-            //     id = 2
-            //     break;
-            //   case "Tomato_Tomato_YellowLeaf_Curl_Virus":
-            //     diagnosis = "Yellow leaf curl"
-            //     id = 4
-            //     break;
-            //   case "Tomato_Early_blight":
-            //     diagnosis = "Early blight"
-            //     id = 1
-            //     break;
-            //   case "Tomato_Septoria_leaf_spot":
-            //     diagnosis = "Spectorial spot"
-            //     id = 5
-            //   break;
-            //   default:
-            //     diagnosis = "Not Found"
-            //     break;
-            // }
-            // // this.inspection(id)
+              case "Tomato_Bacterial_spot":
+                diagnosis = "Bacterial Spot"
+                id = 3
+                break;
+              case "Tomato_healthy":
+                diagnosis ="Healthy"
+                id = 6
+                break;
+              case "Tomato_Late_blight":
+                diagnosis = "Late blight"
+                id = 2
+                break;
+              case "Tomato_Tomato_YellowLeaf_Curl_Virus":
+                diagnosis = "Yellow leaf curl"
+                id = 4
+                break;
+              case "Tomato_Early_blight":
+                diagnosis = "Early blight"
+                id = 1
+                break;
+              case "Tomato_Septoria_leaf_spot":
+                diagnosis = "Spectorial spot"
+                id = 5
+              break;
+              default:
+                diagnosis = "Not Found"
+                break;
+            }
+            this.inspection(id)
         });
       },
 
-      // inspection(id){
-      //   const param = {
-      //     "detect_time": "12H00",
-      //     "detect_date": "07/March",
-      //     "project_id": 1, 
-      //     "customer_id": 1, 
-      //     "health_status_id": id
-      //   }
-      //   axios
-      //     .post('http://localhost:4001/api/detect/create', param)
-      //     .then(() =>{
+      inspection(id){
+        const param = {
+          "detect_time": "12H00",
+          "detect_date": "07/March",
+          "project_id": 1, 
+          "customer_id": 1, 
+          "health_status_id": id
+        }
+        axios
+          .post('http://localhost:4001/api/detect/create', param)
+          .then(() =>{
             
-      //     })
-      // }
+          })
+      }
 
 
     }));

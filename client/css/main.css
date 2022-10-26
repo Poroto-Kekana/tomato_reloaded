@@ -1,5 +1,13 @@
 .dark-bg {
-    background-image: linear-gradient(rgb(0,0,0, .9), rgb(0,0,0, .9)), url('../images/img1\ \(5\).jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.062), rgba(0, 0, 0, 0)), url('../images/tom_bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.darker-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.062), rgba(0, 0, 0, 0)), url('../images/tom_bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -14,13 +22,13 @@
     padding: 100px 0;
 }
 
-.lead {
+/* .lead {
     background-color: rgb(240, 184, 41);
     font-style: italic;
     text-align: center;
     border: 2px solid;
     border-radius: 1em;
-}
+} */
 
 
 .mission{

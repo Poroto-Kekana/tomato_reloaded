@@ -10,6 +10,17 @@ content-type: application/json
      Rotate tomatoes with vegetables unrelated botanically to tomatoes or potatoes. Do not plant these sites with these groups of vegetables for two to three years. Avoid harvesting tomato fruits with visible disease lesions.",
     "id": 4
 }
+########
+
+POST http://localhost:4001/api/diseases
+content-type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6ImFyY2hAZ21haWwuY29tIiwiaWF0IjoxNjY2ODE4NTM5LCJleHAiOjE2NjY4MjIxMzl9.i8BfvLSRDxLgsGPaOFhS9TOXPIjwr8jnCcYck8TT97M
+
+{
+    "disease_name": "yellow leaf curl"
+    
+}
+
 ###
 GET http://localhost:4001/api/forms/register
  content-type: application/json
@@ -21,7 +32,7 @@ content-type: application/json
 
 {
 "username": "Healthy",
-"email": "img6.png",
+"email": "arch2@gmail.com",
 "password": "mary2"
 
 }
@@ -252,6 +263,16 @@ content-type: application/json
     
 "id": 2
 
+}
+
+###
+POST http://localhost:4001/api/forms/login
+content-type: application/json
+
+{
+    "email" : "arch@gmail.com",
+    "password" : "mary2"
+    
 }
 
 
