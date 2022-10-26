@@ -84,7 +84,7 @@ document.addEventListener('alpine:init', () => {
           "health_status_id": id
         }
         axios
-          .post('https://web-app-detect.herokuapp.com/detect/create', param)
+          .post('https://web-app-detect.herokuapp.com/api/detect/create', param)
           .then(() =>{
             
           })
