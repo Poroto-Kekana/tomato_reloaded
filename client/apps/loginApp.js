@@ -9,7 +9,7 @@ document.addEventListener('alpine:init', () => {
         login() {
             // console.log(this.username)
 
-            let url = "http://localhost:4001/api/forms/login";
+            let url = `https://web-app-detect.herokuapp.com/api/forms/login`;
             this.message = ""
             let params = {
                 username : this.username,
@@ -23,7 +23,7 @@ document.addEventListener('alpine:init', () => {
                     console.log(res)
                     if(res.data.isFound) {
                         localStorage.setItem("token", res.data.user.token)
-                        window.location.href="http://localhost:4001/input.html"
+                        window.location.href="https://web-app-detect.herokuapp.com/input.html"
                     }
                     else {
                         this.message = "Incorrect Unsername and Password"
