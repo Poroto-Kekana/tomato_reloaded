@@ -1,9 +1,17 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('registerForm', () => ({
 
-        username: "",
+        first_name: "",
+        last_name: "",
+
         email: "",
+        username: "",
         password: "",
+        contacts: "",
+
+        manager_id : "",
+        project_id: "",
+
 
         register() {
             console.log(this.username)
@@ -11,9 +19,14 @@ document.addEventListener('alpine:init', () => {
             let url = "http://localhost:4001/api/forms/register/create";
 
             let params = {
-                username : this.username,
+                first_name : this.first_name,
+                last_name : this.last_name,
                 email: this.email,
-                password: this.password
+                username : this.username,
+                password: this.password,
+                contacts: this.contacts,
+                manager_id: this.manager_id,
+                project_id: this.project_id,
             }
 
             axios

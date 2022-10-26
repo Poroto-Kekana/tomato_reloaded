@@ -17,12 +17,14 @@ insert into manager
 insert into projects(project_name, location, manager_id) values (
 'bunting', 'gauteng', 1);
 
-insert into register(username, email, password) 
-values ('mary', 'marymagala@gmail.com','mary');
+insert into register 
+    (first_name, last_name, email, username, password, contacts, manager_id, project_id) 
+    values ("Angel", "Ndlozi", "angel@gmail.com","angel.01", 1234, 076898989, 1, 1);
 
 -- ALTER TABLE projects
 -- ADD manager_id varchar(255) 
 
--- drop table projects
+-- drop table register
+
 
    

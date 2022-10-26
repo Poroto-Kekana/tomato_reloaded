@@ -20,10 +20,15 @@ POST http://localhost:4001/api/forms/register/create
 content-type: application/json
 
 {
-"username": "Healthy",
-"email": "img6.png",
-"password": "mary2"
-
+"first_name": "blight1",
+"last_name": "early",
+"email": "blight@gmail",
+"username": "201701@mail",
+"password": "magala.01",
+"contacts": "06754346",
+"manager_id": 4,
+"project_id": 2,
+"id": 2
 }
 
 ###

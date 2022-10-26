@@ -395,9 +395,9 @@ app.post(`/api/forms/login`, async (request, response) => {
  } )
 
  app.post(`/api/forms/register/create`, async function (req, res) {
-    const {username, email, password} = req.body
+    const {first_name, last_name, email, username, password, contacts, manager_id, project_id} = req.body
 
-    const result = await db2.run(`insert into register (username, email, password) values(?,?,?)`,username, email, password);
+    const result = await db2.run(`insert into register (first_name, last_name, email, username, password, contacts, manager_id, project_id) values(?,?,?,?,?,?,?,?)`,first_name, last_name, email, username, password, contacts, manager_id, project_id);
     console.log(result)
 
     res.json({
@@ -405,6 +405,7 @@ app.post(`/api/forms/login`, async (request, response) => {
     })
 
 })
+
 
 
 app.post(`/api/forms/register/delete`, async function (req, res) {

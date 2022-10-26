@@ -36,8 +36,6 @@ picture_name text
 
 
 create table register(
-id integer primary key AUTOINCREMENT,username text,
-email real,
-password real
-
+id integer PRIMARY KEY AUTOINCREMENT, first_name text, last_name text, email real, username real, password real, contacts integer, manager_id integer,project_id integer,
+FOREIGN KEY (manager_id) REFERENCES manager (id),FOREIGN KEY (project_id) REFERENCES projects (id)
 );
