@@ -23,7 +23,7 @@ document.addEventListener('alpine:init', () => {
                     console.log(res)
                     if(res.data.isFound) {
                         localStorage.setItem("token", res.data.user.token)
-                        window.location.href="hhttps://web-app-detect.herokuapp.com/input.html"
+                        window.location.href="./input.html"
                     }
                     else {
                         this.message = "Incorrect Unsername and Password"
