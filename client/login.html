@@ -24,45 +24,39 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-warning py-3">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="./images/logo eli.png" width="10%"> <span class="text-success">leaf</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"> 
-                
-                <span class="navbar-toggler-icon"></span>
+   <!-- Navbar -->
 
+   <nav class="navbar navbar-expand-lg bg-warning navbar-light py-3">
+        <div class="container">
+            <a class="navbar-brand py-1" href="./index.html">
+                <img src="./images/our_logo.png" class="rounded-circle" width="10%"> 
+                <span class="text-success">leaf</span>
+            </a>
+            <!-- <a href="#" class="navbar-brand"> <span class="text-success">leaf</span></a> -->
+
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navmenu">
+
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto ">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link fw-bold">Home</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#about">About</a>
+                    <li class="nav-item">
+                        <a href="./search2.html" class="nav-link fw-bold">Learn</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#service">Services</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Team</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./search.html">Learn</a>
-                    </li>
-                    <li class="nav-item active">
-                        <!-- <a class="nav-link" href="#">Connect</a> -->
-                        <a
-                        class="btn btn-primary btn-lg"
-                        href="#"
-                        target="_blank"
-                        role="button"
-                        >Start Inspection</a
-          >
+                    <li class="nav-item">
+                        <a href="./regARCH.html" class="nav-link fw-bold">Register</a>
                     </li>
                 </ul>
             </div>
-         </div>
+        </div>
     </nav>
 
     <div class="container bg-warning mb-5 mt-5 p-5" x-data="loginForm">

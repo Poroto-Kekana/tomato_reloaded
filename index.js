@@ -56,9 +56,9 @@ app.get('/', async (request, response) => {
     console.log('status')
 });
 
-app.post('/api/diseases/', verrifyToken, async (request, response) => {
+app.post('/api/diseases', async (request, response) => {
     const { disease_name } = request.body;
-    await db.all(`SELECT * FROM diseases WHERE lower(disease_name) = ? `, disease_name.toLowerCase())
+    await db.all(`SELECT * FROM diseases WHERE lower(disease_name) = ?`, disease_name.toLowerCase())
         .then(queryResults => {
             if (queryResults.length == 1) {
                 response.json({
@@ -68,16 +68,13 @@ app.post('/api/diseases/', verrifyToken, async (request, response) => {
                 })
             } else {
                 response.json({
-                    status: "Disease Not Found, Please refer to the list below!!",
+                    status: "Disease Not Found",
                     isFound: false,
                 })
             }
 
         })
 })
-
-
-
 
 
 

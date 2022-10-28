@@ -14,7 +14,7 @@ content-type: application/json
 
 POST http://localhost:4001/api/diseases
 content-type: application/json
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6ImFyY2hAZ21haWwuY29tIiwiaWF0IjoxNjY2ODE4NTM5LCJleHAiOjE2NjY4MjIxMzl9.i8BfvLSRDxLgsGPaOFhS9TOXPIjwr8jnCcYck8TT97M
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6ImFyY2hAZ21haWwuY29tIiwiaWF0IjoxNjY2ODc2MzYzLCJleHAiOjE2NjY4Nzk5NjN9.O1QLf_MpWqi8V7_mtKtGa2Ge1nwwxML0bT3XjUP7heM
 
 {
     "disease_name": "yellow leaf curl"
@@ -261,7 +261,7 @@ content-type: application/json
 
 {
     
-"id": 2
+"id": 1
 
 }
 
@@ -270,8 +270,8 @@ POST http://localhost:4001/api/forms/login
 content-type: application/json
 
 {
-    "email" : "arch@gmail.com",
-    "password" : "mary2"
+    "email" : "pa@yahoo.com",
+    "password" : "24956"
     
 }
 
