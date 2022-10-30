@@ -26,7 +26,7 @@ document.addEventListener('alpine:init', () => {
       },
       uploadPhoto(){
         axios
-          .post('https://model-detect.herokuapp.com/api/detect', this.imageData, {
+          .post('https://model-inspect.herokuapp.com/api/detect', this.imageData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
