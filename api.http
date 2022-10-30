@@ -31,9 +31,11 @@ POST http://localhost:4001/api/forms/register/create
 content-type: application/json
 
 {
+
 "username": "lol",
 "email": "arch2@yahoo.com",
 "password": "123"
+
 
 }
 

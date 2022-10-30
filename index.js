@@ -430,6 +430,7 @@ app.post(`/api/detect/delete`, async function (req, res) {
  
  } )
 
+
  app.post('/api/forms/register/create', async function (req, res) {
     const {username, email, password} = req.body
 
@@ -448,11 +449,13 @@ app.post(`/api/detect/delete`, async function (req, res) {
 
      
 
+
     res.json({
         status: 'success'
     })
 
  })
+
 
 
 app.post(`/api/forms/register/delete`, async function (req, res) {
