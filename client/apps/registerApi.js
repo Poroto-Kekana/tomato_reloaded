@@ -8,7 +8,8 @@ document.addEventListener('alpine:init', () => {
         register() {
             console.log(this.username)
 
-            let url = `https://web-app-detect.herokuapp.com/api/forms/register/create`;
+            let url = `http://localhost:4001/api/forms/register/create`;
+            
 
             let params = {
                 username : this.username,
@@ -21,7 +22,7 @@ document.addEventListener('alpine:init', () => {
                 .then( (res) => {
                     console.log(res)
                 
-                    window.location.href ='./login.html'
+                    window.location.href ='http://localhost:4001/login.html'
                 })
         }
 
